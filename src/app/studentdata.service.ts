@@ -29,7 +29,7 @@ export class StudentdataService {
     
   }
 
-  async setStudentRebate(roll:string,startDate:string,endDate:string){
+  async setStudentRebate(startDate:string,endDate:string){
     var token=await this.auth.getToken()
     console.log(token)
     let headers = new HttpHeaders({
@@ -37,7 +37,7 @@ export class StudentdataService {
       
     });
       let options = { headers: headers ,responseType:'text' as 'json'};
-    let url = this.baseurl.concat("/add-rebate/",roll,'/',startDate,'/',endDate);
+    let url = this.baseurl.concat("/add-rebate/",startDate,'/',endDate);
     return new Promise((resolve, reject) => {
       this.http.post(url,null,options).subscribe((res:any)=>{
         resolve(res)

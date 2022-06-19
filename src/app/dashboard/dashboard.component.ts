@@ -72,14 +72,6 @@ export class DashboardComponent implements OnInit {
     
   }
 
-  async submitRebate(search: any){
-      this.service.setStudentRebate(this.studentData.roll,search.form.value.startDate,search.form.value.endDate).then((res)=>{
-        alert("rebate successfully added")
-        
-    }).catch((res)=>{
-      alert("rebate unsuccessful")
-    })
-  }
 
   async getMonthData(data: any){
     //console.log("monthlydata")
